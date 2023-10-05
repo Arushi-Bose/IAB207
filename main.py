@@ -1,5 +1,6 @@
-from travel import create_app
-#test commit comment
+from website import create_app
+
 if __name__=='__main__':
-    n_app=create_app()
-    n_app.run(debug=True)
+    app=create_app()
+    app.run(debug=True)
+    #disable debug mode once successfully deployed
