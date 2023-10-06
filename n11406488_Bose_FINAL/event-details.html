@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/style/css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shae Gill: Full Circle Tour</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+       <!-- Navigation Bar -->
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="index.html"><img id="logo" src="static/img/logo-removebg.png" height="70" alt="logo"></a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="event-creation-update.html">Create/Update Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking-history.html">Booking History</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link" id="register-login-button" href="#">&nbsp;Welcome, Supriya&nbsp;</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input id=navSearch class="form-control me-2" type="search" placeholder="Search by Artist, Country..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="searchbtn">Search</button>
+                    <a href="index.html"><img id="shopping-bag" src="static/img/shopping-bag-bg.png" height="35" alt="shopping bag"></a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+        <div class="mainEvent">
+            <div class="container text-center col-sm-6"></div>
+            <img src="static/img/shae-gill3.png" class="img-fluid" id="eventPhoto" alt="Shae Gill">
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container text-center">
+
+        <div class="row">
+            <div>
+                <h1 class="col-md"> <span id="chosenEventTitle">Shae Gill: Full Circle Tour</span></h1>
+                <h2 style="background-color: rgba(144, 238, 144, 0.2); color: darkcyan;"><img id="logo" src="static/img/pakistan.png" width="50" height="50" alt="Pakistan flag"> Pakistan</h2>
+            </div>
+        </div> <!--end of row-->
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <div>
+                    <h3 id="cardEventDate"> Wednesday, September 27 2023, 7:00 PM - 11:00 PM</h3>
+                    <h4 id="cardLocation"> Riverstage • 59 Gardens Point Rd, Brisbane City • QLD 4000</h4>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary col-md" id="bookTicketsModal2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" style="font-size: larger;">
+                        BOOK NOW!
+                        Event is <u>Open</u>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-md-5">
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14158.727884959204!2d153.0300464!3d-27.4791587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a110598d1af%3A0xa18cc7aeb141039b!2sRiverstage!5e0!3m2!1sen!2sau!4v1694738364365!5m2!1sen!2sau" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div> <!--end of row-->
+        <br/>
+
+        <!--Event description onwards-->
+            <p class="card-text">🌟 Experience the Magic of Shae Gill Live in Concert! 🌟
+                Prepare to be swept off your feet and immersed in a musical journey like no other as Shae Gill, the sensational artist of Pasoori fame, takes centre stage for a concert that promises to be nothing short of extraordinary.
+                🎶 The Soundtrack to Your Soul 🎶</p>
+
+            <div class="ticket-modal">
+                <!-- Modal window itself -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Book Tickets</h5>
+                                <button type="button" class="btn-close" id="bookTicketsModal" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12" id="modal-eventName">
+                                        <span id="chosenEventTitle"><b>Shae Gill: Full Circle Tour</b></span>
+                                        <h3 id="cardEventDate" style="font-size: medium;"> Wed, Sept 27 2023, 7:00 PM</h3>
+                                        <h4 id="cardLocation" style="font-size: small;"> Riverstage • 59 Gardens Point Rd, Brisbane City • QLD 4000 </h4>
+                                        <div class="row">
+                                            <div class="col-6 col-sm-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="name" class="form-control" id="floatingInput"
+                                                        placeholder="Festival">
+                                                    <label for="floatingInput">Promo Code</label>
+                                                </div>
+                                                <div class="col-6 col-sm-6">
+                                                    <h6 id="refundtxt">
+                                                        <b id="refundpolicy">Refund Policy:</b> Contact the organiser to
+                                                        request a refund.
+                                                        The booking fee is non-refundable.
+                                                        <br>
+                                                        </6>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-6">
+                                                <img class="img-thumbnail" src="static/img/shae-gill3.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <label for="floatingInput" id="modal-eventTicket">Tickets</label>
+                                <div class="form-outline">
+                                    <label class="form-label" for="typeNumber">VIP $120</label>
+                                    <input value="0" min="0" max="100" type="number" id="typeNumber"
+                                        class="form-control" />
+                                </div>
+                                <div class="form-outline">
+                                    <label class=" form-label" for="typeNumber">General $90</label>
+                                    <input value="0" min="0" max="100" type="number" id="typeNumber"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" id="bookTicketsModal"
+                                    data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" id="bookTicketsModal">Book
+                                    tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="Upcoming">User Comments</h3>
+            <div class="row">
+                <div class="col-lg-3 col-sm-12 col-md-4">
+                    <div class="usercommentscontainer">
+                        <p>Make sure you go early to avoid parking issues!</p>
+                        <img id="comment" src="static/img/user.jpg" alt="Avatar">
+                        <p><span>Imaan E Telat</span> • Sep 15th 2023, 4:04PM</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-4">
+                    <div class="usercommentscontainer">
+                        <p>Loved this event last year. Will definitely be going.</p>
+                        <img id="comment" src="static/img/user.jpg" alt="Avatar">
+                        <p><span>Talia</span> • Sep 3rd 2023, 8:43AM</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-sm-12 col-md-4">
+                    <div class="usercommentscontainer">
+                        <p>I've been waiting all year!</p>
+                        <img id="comment" src="static/img/user.jpg" alt="Avatar">
+                        <p><span>Al O'Mally</span> • Aug 29th 2023, 6:56AM</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-sm-12 col-md-4">
+                    <div class="usercommentscontainer">
+                        <p>Forever a Pasoori fan!</p>
+                        <img id="comment" src="static/img/user.jpg" alt="Avatar">
+                        <p><span></span> Ali Sethi • Aug 17th 2023, 10:13PM</p>
+                    </div>
+                </div>
+
+                <div class="comments">
+                    <form class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px" required></textarea>
+                        <label for="floatingTextarea2">Write Comment...</label>
+                        <input type="submit" class="btn btn-primary" id="bookTicketsModal">
+                    </form>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </div>
+        </div>
+    </div>
+    </body>
+
+<footer>
+    <div class="footerLinks text-center col-12" id="footer">
+        <div class="text-center">
+            <ul class="list-unstyled" id="footerNav">
+                <br>
+                <li id="bottomNav">
+                    <a href="index.html" class="text-dark">Home</a>
+                </li>
+                <li id="bottomNav">
+                    <a href="event-creation-update.html" class="text-dark">Create/Update Event</a>
+                </li>
+                <li id="bottomNav">
+                    <a href="booking-history.html" class="text-dark">Booking History</a>
+                </li>
+            </ul>
+            </class>
+        </div>
+    <div>
+        <a href="index.html"><img id="logo" src="static/img/logo-removebg.png" height="100" alt="logo"></a>
+        <a href="index.html"><img id="payment methods" src="static/img/payment-bg.png" height="40" alt="payment methods"></a>
+    </div>
+        <div class="p-3" id="footer">
+            Copyright &copy 2023 Arushi Bose // 
+            <br/>
+            BeatBazaar recognises and pays respect to the Traditional Custodians - the Jagera and Turrbal - on the land on which we enjoy our music.
+        </div>
+    </div>
+</footer>
+
+</html>
+    
