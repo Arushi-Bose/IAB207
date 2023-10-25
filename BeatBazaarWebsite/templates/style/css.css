@@ -1,0 +1,337 @@
+.card-title {
+    color: #96427f;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-text {
+    font-style: italic;
+}
+
+
+#logo {
+    margin: 8px;
+}
+
+.btn-toolbar {
+    margin-left: 16px;
+}
+
+#home-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#eventStatus {
+    padding: 20px;
+}
+
+#eventForm {
+    color: rgb(0, 0, 0);
+    background-color: #ffedff;
+}
+
+.form-floating {
+    padding: 3px;
+}
+
+#bookTicketsModal {
+    background-color: #f7e6f7;
+    color: #780087;
+    border: white;
+    float: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#bookTicketsModal2 {
+    background-color: #f7e6f7;
+    width: 150px;
+    height: 80px;
+    color: #780087;
+    border: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#register-login-button {
+    background-color: #780087;
+    color: white;
+    border-radius: 6px;
+    font-weight: lighter;
+}  
+
+#navSearch {
+    width: 17rem;
+    font-style: italic;
+}
+
+#shopping-bag {
+    padding-left: 10px;
+}
+
+.navbar {
+    font-weight:bold;
+}
+
+.navbar a:hover {
+    background-color: #ffb1fb4e;
+    color: black;
+}
+
+.card:hover {
+    background: #fee;
+    box-shadow: 0 8px 17px 0 rgba(255, 183, 250, 0.425), 0 6px 20px 0 rgba(255, 193, 245, 0.379);
+     
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+
+}
+
+.img-thumbnail {
+    height: 200px;
+    width: 200px;
+
+}
+
+#bookTicketsModal:hover {
+    background-color: #ffb6ff;
+    color: rgb(150, 4, 107);
+}
+
+.jumbotronback {
+    background-image: url("../img/world-map.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+#bookingHistory {
+    border: #2e0055;
+    margin: 15px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c9426f;
+    background-color: rgba(235, 170, 232, 0.377);
+}
+
+
+#footerNav {
+    padding: 5px;
+}
+
+
+#slogan {
+    color: #ffffff;
+    text-shadow: 1px 1px 10px #1b0e0e;
+}
+
+#cardEventDate {
+    color: #87b0ce;
+    font-size: large;
+}
+
+#cardLocation {
+    color: #d9bc80;
+    font-size: large;
+}
+
+#searchbtn {
+    color: #780087;
+    border-color: #780087;
+
+}
+
+#searchbtn:hover {
+    background-color: #f8cef8;
+    color: rgb(150, 4, 107);
+}
+
+#btnEventDetails {
+    background-color: #f7e6f7;
+    color: rgb(199, 2, 140);
+    border: none;
+    font-size: large;
+}
+
+#btnEventDetails:hover {
+    background-color: #ffb6ff;
+    color: rgb(150, 4, 107);
+}
+
+#organisebtn {
+    background-color: #f7e6f7;
+    color: rgb(199, 2, 140);
+    border-color: black;
+}
+
+#organisebtn:hover {
+    background-color: #ffb6ff;
+    color: rgb(150, 4, 107);
+}
+
+#eventPhoto {
+    margin: 10px;
+    padding: 10px;
+    max-height: 550px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#modal-eventTicket {
+    font-weight: bold;
+}
+
+#refundtxt {
+    margin-left: 5px;
+    border: #c9426f;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+}
+
+#refundpolicy {
+    color: red;
+}
+
+.mainEvent {
+    background-image: linear-gradient(to right, rgba(128,0,0,0), rgba(128,0,0,1));
+}
+
+#chosenEventTitle {
+    text-decoration: underline;
+}
+
+.modal-header {
+    background-color: #f7e6f7;
+}
+
+.container-fluid {
+    background-color: #96428054;
+    color: #000000;
+}
+
+.badge {
+    position: absolute;
+    height: 30px;
+    right: 5px;
+    top: 10px;
+    text-align: center;
+}
+
+/*flag images courtesy of flaticon.com*/
+.flag {
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    text-align: center;
+}
+
+#open {
+    font-size: medium;
+    background-color: darkgreen;
+}
+
+#inactive {
+    font-size: medium;
+    background-color: rgb(101, 101, 101);
+}
+
+#soldOut {
+    font-size: medium;
+    background-color: #b80101;
+
+}
+
+#cancelled {
+    font-size: medium;
+    background-color: #e87508;
+}
+
+#btnSurprise {
+    background-color: #780087;
+    color: #f8f8f8;
+    border: white;
+}
+
+#Upcoming,
+#Past {
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.btnfestivalCategory {
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.627);
+    background-color: white;
+    color: black;
+    height: 55px;
+    width: 100px;
+}
+
+.Categorycontainer {
+    overflow: hidden;
+}
+
+.filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none;
+    /* Hidden by default */
+}
+
+.show {
+    display: block;
+}
+
+#bookingNo {
+    margin: 5px;
+}
+
+#comment {
+    width:50px;
+}
+
+.usercommentscontainer {
+    border: 2px solid #714fd8;
+    background-color: #f4eeff;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.usercommentscontainer img {
+    float: left;
+    margin-right: 5px;
+    border-radius: 50%;
+    width: 40px;
+}
+
+.footerLinks {
+    background-color: #7700877b;
+    text-align: center;
+}
+
+#bottomNav {
+    margin: 8px;
+}

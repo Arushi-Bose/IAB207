@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create/Update Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a href="index.html"><img id="logo" src="img/logo-removebg.png" height="70" alt="logo"></a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="event-creation-update.html">Create/Update Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking-history.html">Booking History</a>
+                        </li>
+                        &nbsp;
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-login-button" href="#">&nbsp;Welcome, Supriya&nbsp;</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <input id=navSearch class="form-control me-2" type="search" placeholder="Search by Artist, Country..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" id="searchbtn">Search</button>
+                        <a href="index.html"><img id="shopping-bag" src="img/shopping-bag-bg.png" height="35" alt="shopping bag"></a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    <br/>  
+    <h1 style="text-align: center;"> Create/Update Event</h1>
+    <br/>
+
+    <div class="container text-center">
+
+        <form id="eventForm">
+            <div class="form-floating mb-3">
+                <!--Row-->
+                <div class="row g-3 mb-3">
+                    <div class="form-floating col-12 col-sm-4">
+                        <input required type="name" class="form-control" id="floatingInput" placeholder="Riverstage">
+                        <label for="floatingInput">Event Name</label>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label" for="customFile">Upload Event Image</label>
+                        <input required type="file" accept="image/*" class="form-control" id="customFile" />
+                    </div>
+                    <div class="form-floating col-12 col-sm-4">
+                        <input required type="name" class="form-control" id="floatingInput" placeholder="Japan">
+                        <label for="floatingInput">Country of Origin</label>
+                    </div>
+                    </div><!--END Row-->
+
+                <!--Row-->
+                <div class="row g-3">
+                    <div class="col-4">
+                        <label for="date">Select Date:</label>
+                        <input required class="form-control" type="date" id="eventDatePicker" name="datepicker">
+                    </div>
+                    <div class="col-4">
+                        <label for="startTime">Start time:</label>
+                        <input required class="form-control" type="time" id="StartTime" name="StartTime">
+                    </div>
+                    <div class="col-4">
+                        <label for="endTime">End time:</label>
+                        <input required class="form-control" type="time" id="EndTime" name="EndTime">
+                    </div>
+                </div>
+            <br/>
+
+            <div class="row g-3 mb-3">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Description" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Description</label>
+                </div>
+            </div>
+            <div class="row g-3 mb-3">
+                <div class="form-floating col-12 col-sm-4">
+                    <input required type="name" class="form-control" id="floatingInput" placeholder="Southbank Parklands">
+                    <label for="floatingInput">Venue</label>
+                </div>
+                <div class="form-floating col-12 col-sm-4">
+                    <input required type="name" class="form-control" id="floatingInput" placeholder="240 Smith St">
+                    <label for="floatingInput">Address</label>
+                </div>
+                <div class="form-floating col-12 col-sm-4">
+                    <input required type="text" class="form-control" placeholder="City" aria-label="City">
+                    <label for="floatingInput">City</label>
+                </div>
+            </div>
+
+            <div class="row g-3"><!--Row-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose State...</option>
+                        <option>QLD</option>
+                        <option>NSW</option>
+                        <option>ACT</option>
+                        <option>VIC</option>
+                        <option>SA</option>
+                        <option>TAS</option>
+                        <option>WA</option>
+                        <option>NT</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <input required type="text" class="form-control" placeholder="Postcode" aria-label="Postcode">
+                </div>
+
+                <div class="col-12 col-sm-5 col-lg-3">
+                    <input type="number" min=0 max=9999 class="form-control" placeholder="Number of Tickets" aria-label="Number of Tickets">
+                </div>
+
+                <div class="col-12 col-sm-5 col-lg-2">
+                    <input type="number" min=0 max=9999 class="form-control" id="inlineFormInputGroup" placeholder="Price ($)" aria-label="Price ($)">
+                </div>
+
+                <div class="dropdown col-12 col-sm-2 col-lg-1">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      +
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#"><i>Add another ticket type</i></a></li>
+                      <li><a class="dropdown-item">200x VIP: $120</a></li>
+                      <li><a class="dropdown-item">1000x General: $90</a></li>
+                    </ul>
+                  </div>
+            </div>
+            <br>
+
+        <div class="form-group col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" id="terms" for="gridCheck" style="float:left;">
+                    I have read and accept the Terms & Conditions*
+                </label>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info">Create Event</button>
+        </form>
+
+        <button type="submit" class="btn btn-warning">Update Event</button>
+
+
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+
+<footer>
+    <div class="footerLinks text-center col-12" id="footer">
+        <div class=" text-center">
+            <ul class="list-unstyled" id="footerNav">
+                <br>
+                <li id="bottomNav">
+                    <a href="index.html" class="text-dark">Home</a>
+                </li>
+                <li id="bottomNav">
+                    <a href="event-creation-update.html" class="text-dark">Create/Update Event</a>
+                </li>
+                <li id="bottomNav">
+                    <a href="booking-history.html" class="text-dark">Booking History</a>
+                </li>
+            </ul>
+            </class>
+        </div>
+    <div>
+        <a href="index.html"><img id="logo" src="img/logo-removebg.png" height="100" alt="logo"></a>
+        <a href="index.html"><img id="payment methods" src="img/payment-bg.png" height="40" alt="payment methods"></a>
+    </div>
+        <div class="p-3" id="footer">
+            Copyright &copy 2023 Arushi Bose // 
+            <br/>
+            BeatBazaar recognises and pays respect to the Traditional Custodians - the Jagera and Turrbal - on the land on which we enjoy our music.
+        </div>
+    </div>
+</footer>
+
+</html>

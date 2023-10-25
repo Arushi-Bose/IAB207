@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeatBazaar - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a href="index.html"><img id="logo" src="img/logo-removebg.png" height="70" alt="logo"></a> 
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="event-creation-update.html">Create/Update Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking-history.html">Booking History</a>
+                        </li>
+                        &nbsp;
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-login-button" href="#">&nbsp;Register/Login&nbsp;</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <input id=navSearch class="form-control me-2" type="search" placeholder="Search by Artist, Country..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" id="searchbtn">Search</button>
+                        <a href="index.html"><img id="shopping-bag" src="img/shopping-bag-bg.png" height="35" alt="shopping bag"></a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!--Jumbotron-->
+        <div class="jumbotronback p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5 rounded-3" id="homeJumbotron">
+                <h1 class="display-5 fw-bold" id="slogan"> Your Musical Market </h1>
+                <p class="col-md-8 fs-4" id="slogan"> One beat at a time. Step into a vibrant musical marketplace where boundaries blur, and rhythms collide. BeatBazaar is your passport to concerts by rising international artists, bringing together diverse cultures and genres to create a symphony of unforgettable moments.
+                </p>
+
+                <a href="event-details.html" class="btn btn-primary btn-lg" id="btnSurprise" type="button">View Our Featured Event</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container text-center">
+            <h2 id="home-title" style="color: #780087;">🎶🎵  𝓜𝓾𝓼𝓲𝓬 𝓕𝓮𝓼𝓽𝓲𝓿𝓪𝓵𝓼 🎶</h2>
+
+            <h3 id="Upcoming">Browse by Category (Country of Origin)</h3>
+
+            <!-- Control buttons -->
+            <div id="myBtnContainer">
+                <button class="btn festivalCategory" onclick="filterSelection('Australia')"> Australia</button>
+                <button class="btn festivalCategory" onclick="filterSelection('India')"> India</button>
+                <button class="btn festivalCategory" onclick="filterSelection('Poland')"> Poland</button>
+                <button class="btn festivalCategory" onclick="filterSelection('Japan')"> Japan</button>
+                <button class="btn festivalCategory" onclick="filterSelection('Pakistan')"> Pakistan</button>
+                <button class="btn festivalCategory" onclick="filterSelection('USA')"> USA</button>
+                <button class="btn festivalCategory active" onclick="filterSelection('all')"> Show all</button>
+            </div>
+
+
+            <h3 id="Upcoming">Upcoming Festivals</h3>
+
+            <div class="Categorycontainer">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/shae-gill2.png" alt="Card image">
+                            <span class="flag"><img title="Pakistan" id="logo" src="img/pakistan.png" width="40" alt="Pakistan flag"></span>
+                            <span class="badge badge-secondary" id="open"> OPEN </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Shae Gill: Full Circle Tour</h5>
+                                <h3 id="cardEventDate"> Wed, Sept 27 2023, 7:00 PM</h3>
+                                <h4 id="cardLocation"> Riverstage • Brisbane • QLD</h4>
+
+                                <p class="card-text">
+                                    Prepare to be swept off your feet and immersed in a musical journey like no other.
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/shae-gill2.png" alt="Card image">
+                            <span class="flag"><img title="Pakistan" id="logo" src="img/pakistan.png" width="40" alt="Pakistan flag"></span>
+                            <span class="badge badge-secondary" id="open"> OPEN </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Shae Gill: Full Circle Tour</h5>
+                                <h3 id="cardEventDate"> Thurs, Sept 28 2023, 7:00 PM</h3>
+                                <h4 id="cardLocation"> The Crescent • Parramatta • NSW</h4>
+
+                                <p class="card-text">
+                                    Prepare to be swept off your feet and immersed in a musical journey like no other.
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/shae-gill2.png" alt="Card image">
+                            <span class="flag"><img title="Pakistan" id="logo" src="img/pakistan.png" width="40" alt="Pakistan flag"></span>
+                            <span class="badge badge-secondary" id="open"> OPEN </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Shae Gill: Full Circle Tour</h5>
+                                <h3 id="cardEventDate"> Sat, Sept 30 2023, 7:00 PM</h3>
+                                <h4 id="cardLocation"> Festival Hall • West Melbourne • VIC</h4>
+
+                                <p class="card-text">
+                                    Prepare to be swept off your feet and immersed in a musical journey like no other.
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/shae-gill2.png" alt="Card image">
+                            <span class="flag"><img title="Pakistan" id="logo" src="img/pakistan.png" width="40" alt="Pakistan flag"></span>
+                            <span class="badge badge-secondary" id="open"> OPEN </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Shae Gill: Full Circle Tour</h5>
+                                <h3 id="cardEventDate"> Sun, Oct 1 2023, 7:00 PM</h3>
+                                <h4 id="cardLocation"> Red Hill Auditorium • Red Hill • WA</h4>
+
+                                <p class="card-text">
+                                    Prepare to be swept off your feet and immersed in a musical journey like no other.
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/fujii-kaze2.png" alt="Card image">
+                            <span class="flag"><img title="Japan" id="logo" src="img/japan.png" width="40" alt="Japan flag"></span>
+                            <span class="badge badge-secondary" id="soldOut"> SOLD OUT </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Fujii Kaze and the piano Tour</h5>
+                                <h3 id="cardEventDate"> Sat, Oct 14 2023, 3:00 PM</h3>
+                                <h4 id="cardLocation">  Qudos Bank Arena • Sydney Olympic Park • NSW</h4>
+
+                                <p class="card-text">
+                                    No. 1 on Billboard Japan’s Hot Albums chart singer/songwriter takes on Australia solo! 
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/fujii-kaze2.png" alt="Card image">
+                            <span class="flag"><img title="Japan" id="logo" src="img/japan.png" width="40" alt="Japan flag"></span>
+                            <span class="badge badge-secondary" id="soldOut"> SOLD OUT </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Fujii Kaze and the piano Tour</h5>
+                                <h3 id="cardEventDate"> Sun, Oct 15 2023, 3:00 PM</h3>
+                                <h4 id="cardLocation"> Qudos Bank Arena • Sydney Olympic Park • NSW</h4>
+
+                                <p class="card-text">
+                                    No. 1 on Billboard Japan’s Hot Albums chart singer/songwriter takes on Australia solo! 
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/fujii-kaze.png" alt="Card image">
+                            <span class="flag"><img title="Japan" id="logo" src="img/japan.png" width="40" alt="Japan flag"></span>
+                            <span class="badge badge-secondary" id="cancelled"> CANCELLED </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Fujii Kaze: Haru Matsuri</h5>
+                                <h3 id="cardEventDate"> Sat, Oct 21 2023, 4:30 PM</h3>
+                                <h4 id="cardLocation"> Rod Laver Arena • Melbourne • VIC</h4>
+
+                                <p class="card-text">
+                                    A 2nd show for fans who missed out! Until it got cancelled.
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/fujii-kaze.png" alt="Card image">
+                            <span class="flag"><img title="Japan" id="logo" src="img/japan.png" width="40" alt="Japan flag"></span>
+                            <span class="badge badge-secondary" id="cancelled"> CANCELLED •</span>
+                            <div class="card-body">
+                                <h5 class="card-title">Fujii Kaze: Haru Matsuri</h5>
+                                <h3 id="cardEventDate"> Sun, Oct 22 2023, 4:30 PM</h3>
+                                <h4 id="cardLocation"> Rod Laver Arena • Melbourne • VIC</h4>
+
+                                <p class="card-text">
+                                    A 2nd show for fans who missed out! Until it got cancelled.
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end of row -->
+
+                <!--PAST FESTIVALS WITH INACTIVE STATUS-->
+                <h3 id="Past">Past Festivals</h3>
+
+                <div class="row">
+                    <!--Card-->
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/arijit-singh.jpeg" alt="Card image">
+                            <span class="flag"><img title="India" id="logo" src="img/india.png" width="40" alt="India flag"></span>
+                            <span class="badge badge-secondary" id="inactive"> INACTIVE </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Arijit Singh Live</h5>
+                                <h3 id="cardEventDate"> Fri, Apr 14 2023, 6:00 PM</h3>
+                                <h4 id="cardLocation"> Brisbane Entertainment Centre • Brisbane • QLD</h4>
+
+                                <p class="card-text">
+                                    "Kyunki tum hi ho, ab tum hi ho, zindagi ab tum hi ho" ...Experience the Magic!
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Card-->
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/arijit-singh.jpeg" alt="Card image">
+                            <span class="flag"><img title="India" id="logo" src="img/india.png" width="40" alt="India flag"></span>
+                            <span class="badge badge-secondary" id="inactive"> INACTIVE </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Arijit Singh Live</h5>
+                                <h3 id="cardEventDate"> Sun, Apr 16 2023, 6:00 PM</h3>
+                                <h4 id="cardLocation"> ICC Sydney • Sydney • NSW</h4>
+
+                                <p class="card-text">
+                                    "Kyunki tum hi ho, ab tum hi ho, zindagi ab tum hi ho" ...Experience the Magic!
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Card-->
+                    <div class="col-lg-3 col-sm-12 col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/arijit-singh.jpeg" alt="Card image">
+                            <span class="flag"><img title="India" id="logo" src="img/india.png" width="40" alt="India flag"></span>
+                            <span class="badge badge-secondary" id="inactive"> INACTIVE </span>
+                            <div class="card-body">
+                                <h5 class="card-title">Arijit Singh Live</h5>
+                                <h3 id="cardEventDate"> Sat, Apr 22 2023, 6:00 PM</h3>
+                                <h4 id="cardLocation"> RAC Arena • Perth • WA</h4>
+
+                                <p class="card-text">
+                                    "Kyunki tum hi ho, ab tum hi ho, zindagi ab tum hi ho" ...Experience the Magic!
+                                </p>
+                                <a href="event-details.html" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!--end of row-->
+            </div> <!--end of category-->
+        </div>
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+<footer>
+    <div class="footerLinks text-center col-12" id="footer">
+        <div class=" text-center">
+            <ul class="list-unstyled" id="footerNav">
+                <br>
+                <li id="bottomNav">
+                    <a href="index.html" class="text-dark">Home</a>
+                </li>
+                <li id="bottomNav">
+                    <a href="event-creation-update.html" class="text-dark">Create/Update Event</a>
+                </li>
+                <li id="bottomNav">
+                    <a href="booking-history.html" class="text-dark">Booking History</a>
+                </li>
+            </ul>
+            </class>
+        </div>
+    <div>
+        <a href="index.html"><img id="logo" src="img/logo-removebg.png" height="100" alt="logo"></a>
+        <a href="index.html"><img id="payment methods" src="img/payment-bg.png" height="40" alt="payment methods"></a>
+    </div>
+        <div class="p-3" id="footer">
+            Copyright &copy 2023 Arushi Bose // 
+            <br/>
+            BeatBazaar recognises and pays respect to the Traditional Custodians - the Jagera and Turrbal - on the land on which we enjoy our music.
+        </div>
+    </div>
+</footer>
+
+</html>
