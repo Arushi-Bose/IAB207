@@ -1,4 +1,4 @@
-from BeatBazaarWebsite import db, create_app
+from BeatBazaar import db, create_app
 
 app = create_app()
 ctx = app.app_context()
