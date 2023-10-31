@@ -13,6 +13,8 @@ def create_app():
     app = Flask(__name__)  # this is the name of the module/package that is calling this app
     # Should be set to false in a production environment
     app.debug = True
+    app.static_folder = 'static' 
+    app._static_url_path = '/static'
     app.secret_key = 'somesecretkey'
     #set the app configuration data 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
@@ -43,5 +45,8 @@ def create_app():
 
     from . import auth
     app.register_blueprint(auth.auth_bp)
+
+    from . import events
+    app.register_blueprint(events.event_bp)
     
     return app
