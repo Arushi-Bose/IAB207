@@ -58,3 +58,10 @@ def login():
         else:
             flash(error)
     return render_template('login.html', form=login_form, heading='Login')
+
+
+@auth_bp.route('/logout', methods=['GET', 'POST'])
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
