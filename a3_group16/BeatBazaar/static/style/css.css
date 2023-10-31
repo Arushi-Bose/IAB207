@@ -76,6 +76,7 @@
 
 .navbar {
     font-weight: bold;
+    margin-top: 0px;
 }
 
 .navbar a:hover {
@@ -345,4 +346,8 @@ h2 {
 #user_name {
     background-color: #ad0b0b;
     align-content: center;
+}
+
+#navbar {
+    padding-top: 0px;
 }

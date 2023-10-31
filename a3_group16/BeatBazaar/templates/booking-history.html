@@ -1,56 +1,6 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="static/style/css.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Booking History</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-
-<body>
-
-    <header>
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a href="index.html"><img id="logo" src="static/img/logo-removebg.png" height="70" alt="logo"></a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="event-creation-update.html">Create/Update Event</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="booking-history.html">Booking History</a>
-                        </li>
-                        &nbsp;
-                        <li class="nav-item">
-                            <a class="nav-link" id="register-login-button" href="#">&nbsp;Welcome, Supriya&nbsp;</a>
-                        </li>
-
-                    </ul>
-                    <form class="d-flex">
-                        <input id=navSearch class="form-control me-2" type="search" placeholder="Search by Artist, Country..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit" id="searchbtn">Search</button>
-                        <a href="index.html"><img id="shopping-bag" src="static/img/shopping-bag-bg.png" height="35" alt="shopping bag"></a>
-                    </form>
-                </div>
-            </div>
-        </nav>
-
-
-        </header>
-
+{% block content %}
         <br/>  
         <h1 style="text-align: center;"> Booking History</h1>
         
@@ -110,37 +60,4 @@
               <input type="text" class="form-control" placeholder="Search a booking" aria-label="Input group example" aria-describedby="btnGroupAddon">
             </div>
           </div>
-          
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        </body>
-
-<footer>
-    <div class="footerLinks text-center col-12" id="footer">
-        <div class=" text-center">
-            <ul class="list-unstyled" id="footerNav">
-                <br>
-                <li id="bottomNav">
-                    <a href="index.html" class="text-dark">Home</a>
-                </li>
-                <li id="bottomNav">
-                    <a href="event-creation-update.html" class="text-dark">Create/Update Event</a>
-                </li>
-                <li id="bottomNav">
-                    <a href="booking-history.html" class="text-dark">Booking History</a>
-                </li>
-            </ul>
-            </class>
-        </div>
-    <div>
-        <a href="index.html"><img id="logo" src="static/img/logo-removebg.png" height="100" alt="logo"></a>
-        <a href="index.html"><img id="payment methods" src="static/img/payment-bg.png" height="40" alt="payment methods"></a>
-    </div>
-        <div class="p-3" id="footer">
-            Copyright &copy 2023 Arushi Bose // 
-            <br/>
-            BeatBazaar recognises and pays respect to the Traditional Custodians - the Jagera and Turrbal - on the land on which we enjoy our music.
-        </div>
-    </div>
-</footer>
-
-</html>
+{% endblock %}
