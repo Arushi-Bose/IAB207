@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style/css.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BeatBazaar - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,8 +35,23 @@
                             </li>
                             &nbsp;
                             <li class="nav-item">
-                                <a class="nav-link" id="register-login-button"
-                                    href="{{ url_for('auth.login') }}">&nbsp;Register/Login&nbsp;</a>
+                                <!-- <a class="nav-link" id="register-login-button"
+                                    href="{{ url_for('auth.login') }}">&nbsp;Register/Login&nbsp;</a> -->
+                                {% if current_user.is_authenticated %}
+                                <li>
+                                    <a class="nav-item nav-link disabled text-muted" href="#">Welcome {{current_user.name}}</a>
+                                </li>
+                                <li>
+                                    <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                                </li>
+                                <li>
+                                    <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Log In</a>
+                                </li>
+                                {% endif %}
                             </li>
 
                         </ul>
