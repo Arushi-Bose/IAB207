@@ -3,6 +3,8 @@ from flask import Flask
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
+import datetime
 
 db = SQLAlchemy()
 
@@ -21,7 +23,11 @@ def create_app():
     #initialize db with flask app
     db.init_app(app)
 
+    # we use this utility module to display forms quickly
     Bootstrap5(app)
+
+    # this is a much safer way to store passwords hashes
+    Bcrypt(app)
     
     #initialize the login manager
     login_manager = LoginManager()
