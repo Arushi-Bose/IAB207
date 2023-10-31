@@ -14,7 +14,8 @@ class RegisterForm(FlaskForm):
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
     #linking two fields - password should be equal to data entered in confirm
     password=PasswordField("Password", validators=[InputRequired(),
-                  EqualTo('confirm', message="Passwords should match")])
+                Length(min=8, message='%(min)d'),  
+                EqualTo('confirm', message="Passwords should match")])
     confirm = PasswordField("Confirm Password")
 
     #submit button
