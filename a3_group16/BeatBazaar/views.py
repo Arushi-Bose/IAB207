@@ -14,8 +14,8 @@ def history():
 @main_bp.route('/create')
 @login_required
 def create_event():
-    return render_template('event-creation-update.html')
+    return render_template('events/event-creation-update.html')
 
 @main_bp.route('/details')
-def detail():
-    return render_template('event-details.html')
+def details():
+    return render_template('events/event-details.html')
