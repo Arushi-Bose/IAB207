@@ -25,8 +25,10 @@
 {% endwith %}
 
 <!-- Form rendering is simple and easy if using bootstrap -->
-<div class="col-md-6 ml-5">
-{{ render_form(form) }}
+<div class="col-md-6 ml-5" id="Register">
+    <div>
+        {{ render_form(form) }}
+    </div>
 </div>
 
 <!-- When you have login form, then do show the user a link to register -->
