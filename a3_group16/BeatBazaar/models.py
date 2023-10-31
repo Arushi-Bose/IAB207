@@ -1,4 +1,5 @@
 from flask_login import UserMixin
+from datetime import datetime
 from . import db
 
 class User(db.Model, UserMixin):
@@ -9,7 +10,7 @@ class User(db.Model, UserMixin):
     # Password needs to be encrypted before being stored in the db
     password_hash = db.Column(db.String(255), nullable=False)
     # The comment relation will only be used if we need to link users and comments
-    # comments = db.relationship('Comment', backref='user')
+    #comments = db.relationship('Comment', backref='user')
     
     # string print method
     def __repr__(self):
