@@ -343,11 +343,27 @@ h2 {
     padding: 10px;
 }
 
-#user_name {
-    background-color: #ad0b0b;
-    align-content: center;
+#Register {
+    margin-left: 25%;
+}
+
+#flashpadding {
+    padding-top: 5px;
+}
+
+#loginpage {
+    height: 100vh;
+}
+
+.page-header {
+    padding-top: 5%;
+}
+
+#flash {
+    margin-bottom: 0px;
 }
 
 #navbar {
     padding-top: 0px;
+    padding-bottom: 0px;
 }

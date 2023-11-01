@@ -71,7 +71,7 @@
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                 {% for message in get_flashed_messages() %}
-                <div class="alert alert-warning">
+                <div class="alert alert-warning" id="flash">
                     <button type="button" class="close" data-dismiss="alert" aria-label="close">x</button>
                     {{message}}
                 </div>

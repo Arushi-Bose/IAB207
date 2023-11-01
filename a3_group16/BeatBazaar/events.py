@@ -1,13 +1,21 @@
 from flask import Blueprint, render_template, url_for, flash, redirect, request
-from flask_login import login_required
-from .forms import EventForm
+from flask_login import login_required, current_user
+from .forms import EventForm, CommentForm
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import CombinedMultiDict
 import os
 from . import db
-from .models import Event
+from .models import Event, Comment
 
 event_bp = Blueprint('event', __name__, url_prefix='/event')
+
+
+@event_bp.route('/<id>', methods=['GET', 'POST'])
+def show(id):
+    events = db.session.scalar(db.select(Event).where(Event.id==id))
+    # comment form
+    form = CommentForm()
+    return render_template('events/event-details.html', events=events, form=form)
 
 @event_bp.route('/create', methods=['GET', 'POST'])
 @login_required
@@ -61,3 +69,19 @@ def check_upload_file(form):
 @event_bp.route('/details', methods=['GET', 'POST'])
 def details():
     return render_template('events/event-details.html')
+
+
+@event_bp.route('/<id>/comment', methods=['GET', 'POST'])
+def comment(id):
+    form = CommentForm()
+
+    events = db.session.scalar(db.select(Event).where(Event.id==id))
+
+    if form.validate_on_submit():
+        comment = Comment(text=form.text.data, events=events, user=current_user)
+
+        db.session.add(comment)
+        db.session.commit()
+
+        flash('Your comment has been added', 'success')
+    return redirect(url_for('events/event-details.html', id=id))
