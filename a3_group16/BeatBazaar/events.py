@@ -10,10 +10,9 @@ from .models import Event, Comment
 event_bp = Blueprint('event', __name__, url_prefix='/event')
 
 
-@event_bp.route('/<id>')
+@event_bp.route('/<id>', methods=['GET', 'POST'])
 def show(id):
     events = db.session.scalar(db.select(Event).where(Event.id==id))
-
     # comment form
     form = CommentForm()
     return render_template('events/event-details.html', events=events, form=form)

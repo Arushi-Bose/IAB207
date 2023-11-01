@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid" id="loginpage">
 <div class="page-header">
     <h4>{{ heading }}</h4>
 </div>
@@ -16,7 +16,7 @@
     <div class="row mt-3 mb-3">
       <div class="col-md-12">
       {% for message in messages %} <!--loop through the messages-->
-        <div class="alert alert-info">{{ message }}</div> <!--display as alert-->
+        <div class="alert alert-info" id="alerts">{{ message }}</div> <!--display as alert-->
       {% endfor %}
     </div>
   </div>
