@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 
 {% from 'bootstrap5/form.html' import render_form %}
 
@@ -9,10 +9,12 @@
 
     <div class="container text-center">
 
-        <form id="eventForm">
+        <div id="EventForm">
             <div class="form-floating mb-3">
-
-                {{render_form(form)}}
+                <form method="POST" enctype="multipart/form-data">
+                    {{render_form(form)}}
+                </form>
+                
 
         </div>
     </div>
