@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     emailid = db.Column(db.String(100), index=True, nullable=False)
     # Password needs to be encrypted before being stored in the db
-    password_hash = db.Column(db.String(255), nullable=False)
+    password_hash = db.Column(db.Integer, nullable=False)
     # The comment relation will only be used if we need to link users and comments
     #comments = db.relationship('Comment', backref='user')
     

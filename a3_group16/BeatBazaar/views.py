@@ -8,14 +8,6 @@ def index():
     return render_template('index.html')
 
 @main_bp.route('/history')
+@login_required
 def history():
     return render_template('booking-history.html')
-
-@main_bp.route('/create')
-@login_required
-def create_event():
-    return render_template('events/event-creation-update.html')
-
-@main_bp.route('/details')
-def details():
-    return render_template('events/event-details.html')
