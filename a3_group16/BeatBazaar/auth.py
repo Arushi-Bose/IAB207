@@ -46,13 +46,11 @@ def login():
         #get the username and password from the database
         user_name = login_form.user_name.data
         password = login_form.password.data
-        user = db.session.scalar(db.select(User).where(User.name==user_name))
+        user = User.query.filter_by(name=user_name).first()
         #if there is no user with that name
-        if user is None:
-            error = 'Incorrect username'#could be a security risk to give this much info away
-        #check the password - notice password hash function
-        elif not check_password_hash(user.password_hash, password): # takes the hash and password
-            error = 'Incorrect password'
+        if user is None or not check_password_hash(user.password_hash, password):
+            flash('Invalid username or password')
+            #error message does not specifcally say which is wrong
         if error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(user)
