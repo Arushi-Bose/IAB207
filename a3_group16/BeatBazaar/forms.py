@@ -27,21 +27,21 @@ class RegisterForm(FlaskForm):
     submit = SubmitField("Register")
 
 class EventForm(FlaskForm):
-    event_name = StringField('Event Name', validators=[InputRequired('Enter an event name')])
-    event_image = FileField('Event Image', validators=[FileRequired(message='Image cannot be empty'), FileAllowed(ALLOWED_FILE, message='Only supports PNG, JPG, png, jpg')])
+    event_name=StringField("Event Name", validators=[InputRequired('Enter an event name')])
+    event_image = FileField(validators=[FileRequired(message='Image cannot be empty'), FileAllowed(ALLOWED_FILE, message='Only supports PNG, JPG, png, jpg')])
     event_country = StringField('Country of Origin', validators=[InputRequired('Enter an event name')])
     event_date = DateField('Event Date', validators=[InputRequired('Enter an event name')])
-    event_start_time = TimeField('Start Time', validators=[InputRequired('Enter an event name')])
-    event_end_time = TimeField('End Time', validators=[InputRequired('Enter an event name')])
+    event_start_time = StringField('Start Time', validators=[InputRequired('Enter an event name')])
+    event_end_time = StringField('End Time', validators=[InputRequired('Enter an event name')])
     event_description = TextAreaField('Description of Event', validators=[InputRequired('Enter an event name')])
     event_venue = StringField('Event Venue')
     event_address = StringField('Address')
     event_city = StringField('City')
     event_state = SelectField('State', choices=[('qld', 'QLD'), ('nsw', 'NSW'), ('act', 'ACT'), ('vic','VIC'), ('sa','SA'), ('tas', 'TAS'), ('wa', 'WA'), ('nt', 'NT')])
     event_postcode = StringField('Postcode')
-    event_number_tickets = IntegerField('Number of Tickets', validators=[InputRequired(), NumberRange(min=1, max=9999)])
+    event_number_tickets = IntegerField('Number of Tickets', validators=[InputRequired()])
     event_ticket_price = IntegerField('Price ($)', validators=[InputRequired()])
-    event_special_ticket = SelectField('Ticket Type', validate_choice=[('vip','VIP'), ('general', 'General')])
+    event_special_ticket = SelectField('Ticket Type', choices=[('vip','VIP'), ('general', 'General')])
 
     # Submit button
-    submit = SubmitField("Create Event")
+    submit = SubmitField("Create event")

@@ -1,44 +1,63 @@
-from flask import Blueprint, render_template, url_for, flash, redirect
+from flask import Blueprint, render_template, url_for, flash, redirect, request
 from flask_login import login_required
 from .forms import EventForm
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import CombinedMultiDict
+import os
 from . import db
 from .models import Event
 
 event_bp = Blueprint('event', __name__, url_prefix='/event')
 
-@event_bp.route('/create')
+@event_bp.route('/create', methods=['GET', 'POST'])
 @login_required
 def create_event():
-    form = EventForm()
+    create = EventForm(CombinedMultiDict((request.form, request.files)))
 
-    if (form.validate_on_submit()==True):
+    if create.is_submitted():
+        
+        image_path = check_upload_file(create)
+
         event = Event(
-        eventname = form.event_name.data,
-        eventimage = form.event_image.data,
-        eventcountry = form.event_country.data,
-        eventdate = form.event_date.data,
-        eventstarttime = form.event_start_time.data,
-        eventendtime = form.event_end_time.data,
-        eventdescription = form.event_description.data,
-        eventvenue = form.event_venue.data,
-        eventaddress = form.event_address.data,
-        eventcity = form.event_city.data,
-        eventstate = form.event_state.data,
-        eventpostcode = form.event_postcode.data,
-        eventnumbertickets = form.event_number_tickets,
-        eventticketprice = form.event_ticket_price.data,
-        eventspecialticket = form.event_special_ticket.data
+        name = create.event_name.data,
+        image = image_path,
+        country = create.event_country.data,
+        date = create.event_date.data,
+        start_time = create.event_start_time.data,
+        end_time = create.event_end_time.data,
+        description = create.event_description.data,
+        venue = create.event_venue.data,
+        address = create.event_address.data,
+        city = create.event_city.data,
+        state = create.event_state.data,
+        postcode = create.event_postcode.data,
+        number_tickets = create.event_number_tickets.data,
+        ticket_price = create.event_ticket_price.data,
+        special_ticket = create.event_special_ticket.data
         )
         # adds the inputs to the db session
         db.session.add(event)
         # Commits the inputs to the database
         db.session.commit()
 
-        flash('Successfully created the new event')
+        return redirect(url_for('event.create_event'))
+    else:
+        return render_template('events/event-creation-update.html', form=create)
 
-        return redirect(url_for('event.create'))
-    return render_template('events/event-creation-update.html', form=form)
+def check_upload_file(form):
+  #get file data from form  
+  fp = form.event_image.data
+  filename = fp.filename
+  #get the current path of the module file… store image file relative to this path  
+  BASE_PATH = os.path.dirname(__file__)
+  #upload file location – directory of this file/static/image
+  upload_path = os.path.join(BASE_PATH, 'static/img', secure_filename(filename))
+  #store relative path in DB as image location in HTML is relative
+  db_upload_path = '/static/image/' + secure_filename(filename)
+  #save the file and return the db upload path
+  fp.save(upload_path)
+  return db_upload_path
 
-@event_bp.route('/details')
+@event_bp.route('/details', methods=['GET', 'POST'])
 def details():
     return render_template('events/event-details.html')
