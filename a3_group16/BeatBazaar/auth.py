@@ -25,7 +25,7 @@ def register():
                 flash('Username already exists, please try another')
                 return redirect(url_for('auth.register'))
             # don't store the password in plaintext!
-            pwd_hash = generate_password_hash(pwd)
+            pwd_hash = generate_password_hash(pwd).decode('utf-8')
             #create a new User model object
             new_user = User(name=uname, password_hash=pwd_hash, emailid=email)
             db.session.add(new_user)

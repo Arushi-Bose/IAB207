@@ -37,8 +37,8 @@ def create_event():
         flash('Successfully created the new event')
 
         return redirect(url_for('event.create'))
-    return render_template('event/event-creation-update.html', form=form)
+    return render_template('events/event-creation-update.html', form=form)
 
 @event_bp.route('/details')
-def detail():
-    return render_template('event/event-details.html')
+def details():
+    return render_template('events/event-details.html')
