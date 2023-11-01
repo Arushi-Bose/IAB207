@@ -37,7 +37,35 @@
 
         <h3 id="Upcoming">Upcoming Festivals</h3>
 
-        <div class="Categorycontainer">
+        
+                
+                
+
+            <!--PAST FESTIVALS WITH INACTIVE STATUS-->
+            <h3 id="Past">Past Festivals</h3>
+
+            <div class="row">
+                <!--Card-->
+                <div class="col-lg-3 col-sm-12 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="static/img/arijit-singh.jpeg" alt="Card image">
+                        <span class="flag"><img title="India" id="logo" src="static/img/india.png" width="40"
+                                alt="India flag"></span>
+                        <span class="badge badge-secondary" id="inactive"> INACTIVE </span>
+                        <div class="card-body">
+                            <h5 class="card-title">Arijit Singh Live</h5>
+                            <h3 id="cardEventDate"> Fri, Apr 14 2023, 6:00 PM</h3>
+                            <h4 id="cardLocation"> Brisbane Entertainment Centre • Brisbane • QLD</h4>
+
+                            <p class="card-text">
+                                "Kyunki tum hi ho, ab tum hi ho, zindagi ab tum hi ho" ...Experience the Magic!
+                            </p>
+                            <a href="{{ url_for('event.details') }}" class="btn btn-primary" id="btnEventDetails"> Details 🠲
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Categorycontainer">
             <div class="row">
                 <div class="col-lg-3 col-sm-12 col-md-4">
                     <div class="card">
@@ -90,31 +118,6 @@
 
                             <p class="card-text">
                                 A 2nd show for fans who missed out! Until it got cancelled.
-                            </p>
-                            <a href="{{ url_for('event.details') }}" class="btn btn-primary" id="btnEventDetails"> Details 🠲
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            <!--PAST FESTIVALS WITH INACTIVE STATUS-->
-            <h3 id="Past">Past Festivals</h3>
-
-            <div class="row">
-                <!--Card-->
-                <div class="col-lg-3 col-sm-12 col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="static/img/arijit-singh.jpeg" alt="Card image">
-                        <span class="flag"><img title="India" id="logo" src="static/img/india.png" width="40"
-                                alt="India flag"></span>
-                        <span class="badge badge-secondary" id="inactive"> INACTIVE </span>
-                        <div class="card-body">
-                            <h5 class="card-title">Arijit Singh Live</h5>
-                            <h3 id="cardEventDate"> Fri, Apr 14 2023, 6:00 PM</h3>
-                            <h4 id="cardLocation"> Brisbane Entertainment Centre • Brisbane • QLD</h4>
-
-                            <p class="card-text">
-                                "Kyunki tum hi ho, ab tum hi ho, zindagi ab tum hi ho" ...Experience the Magic!
                             </p>
                             <a href="{{ url_for('event.details') }}" class="btn btn-primary" id="btnEventDetails"> Details 🠲
                             </a>
