@@ -1,8 +1,10 @@
 #import flask - from the package import class
-from flask import Flask 
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
+import datetime
 
 db = SQLAlchemy()
 
@@ -21,7 +23,11 @@ def create_app():
     #initialize db with flask app
     db.init_app(app)
 
+    # we use this utility module to display forms quickly
     Bootstrap5(app)
+
+    # this is a much safer way to store passwords hashes
+    Bcrypt(app)
     
     #initialize the login manager
     login_manager = LoginManager()
@@ -48,5 +54,14 @@ def create_app():
 
     from . import events
     app.register_blueprint(events.event_bp)
+
+    # error handling
+    @app.errorhandler(404)
+    def not_found(e):
+        return render_template("events/404error.html", error=e)
+    
+    @app.errorhandler(500)
+    def internal_server_error(e):
+        return render_template("events/500error.html"), 500
     
     return app

@@ -29,15 +29,30 @@
                                 <a class="nav-link" aria-current="page" href="{{ url_for('main.index') }}">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('main.create_event') }}">Create/Update Event</a>
+                                <a class="nav-link" href="{{ url_for('event.create_event') }}">Create/Update Event</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('main.history') }}">Booking History</a>
                             </li>
                             &nbsp;
                             <li class="nav-item">
-                                <a class="nav-link" id="register-login-button"
-                                    href="{{ url_for('auth.login') }}">&nbsp;Register/Login&nbsp;</a>
+                                <!-- <a class="nav-link" id="register-login-button"
+                                    href="{{ url_for('auth.login') }}">&nbsp;Register/Login&nbsp;</a> -->
+                                {% if current_user.is_authenticated %}
+                                <li>
+                                    <a class="nav-item nav-link disabled text-muted" href="#">Welcome {{current_user.name}}</a>
+                                </li>
+                                <li>
+                                    <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                                </li>
+                                <li>
+                                    <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Log In</a>
+                                </li>
+                                {% endif %}
                             </li>
 
                         </ul>
@@ -84,7 +99,7 @@
                             <a href="{{ url_for('main.index') }}" class="text-dark">Home</a>
                         </li>
                         <li id="bottomNav">
-                            <a href="{{ url_for('main.create_event') }}" class="text-dark">Create/Update Event</a>
+                            <a href="{{ url_for('event.create_event') }}" class="text-dark">Create/Update Event</a>
                         </li>
                         <li id="bottomNav">
                             <a href="{{ url_for('main.history') }}" class="text-dark">Booking History</a>

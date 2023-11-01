@@ -2,7 +2,9 @@ from flask import Blueprint, flash, render_template, request, url_for, redirect
 from werkzeug.security import generate_password_hash,check_password_hash
 from .models import User
 from .forms import LoginForm,RegisterForm
-from flask_login import login_user, login_required,logout_user
+# new imports:
+from flask_login import login_user, login_required, logout_user
+from flask_bcrypt import generate_password_hash, check_password_hash
 from . import db
 
 # Create a blueprint - make sure all BPs have unique names
@@ -23,7 +25,7 @@ def register():
                 flash('Username already exists, please try another')
                 return redirect(url_for('auth.register'))
             # don't store the password in plaintext!
-            pwd_hash = generate_password_hash(pwd)
+            pwd_hash = generate_password_hash(pwd).decode('utf-8')
             #create a new User model object
             new_user = User(name=uname, password_hash=pwd_hash, emailid=email)
             db.session.add(new_user)
