@@ -37,11 +37,12 @@ class EventForm(FlaskForm):
     event_venue = StringField('Event Venue')
     event_address = StringField('Address')
     event_city = StringField('City')
-    event_state = SelectField('State', choices=[('qld', 'QLD'), ('nsw', 'NSW'), ('act', 'ACT'), ('vic','VIC'), ('sa','SA'), ('tas', 'TAS'), ('wa', 'WA'), ('nt', 'NT')])
+    event_state = SelectField('State', choices=[('QLD', 'QLD'), ('NSW', 'NSW'), ('ACT', 'ACT'), ('VIC','VIC'), ('SA','SA'), ('TAS', 'TAS'), ('WA', 'WA'), ('NT', 'NT')])
     event_postcode = StringField('Postcode')
     event_number_tickets = IntegerField('Number of Tickets', validators=[InputRequired()])
     event_ticket_price = IntegerField('Price ($)', validators=[InputRequired()])
     event_special_ticket = SelectField('Ticket Type', choices=[('vip','VIP'), ('general', 'General')])
+    event_status = SelectField('Status', choices=[('open', 'Open')])
 
     # Submit button
     submit = SubmitField("Create event")
