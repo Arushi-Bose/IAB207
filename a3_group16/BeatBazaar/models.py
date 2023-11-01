@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
     # Password needs to be encrypted before being stored in the db
     password_hash = db.Column(db.Integer, nullable=False)
     # The comment relation will only be used if we need to link users and comments
-    #comments = db.relationship('Comment', backref='user')
+    comments = db.relationship('Comment', backref='user')
     
     # string print method
     def __repr__(self):
@@ -20,10 +20,11 @@ class Event(db.Model):
     __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), index=True, nullable=False, unique=True)
+    image = db.Column(db.String(100), nullable=False)
     country = db.Column(db.String(50), nullable=False)
-    date = db.Column(db.Integer, nullable=False)
-    start_time = db.Column(db.Integer, nullable=False)
-    end_time = db.Column(db.Integer, nullable=False)
+    date = db.Column(db.String(50), nullable=False)
+    start_time = db.Column(db.String(50), nullable=False)
+    end_time = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(255), nullable=False)
     venue = db.Column(db.String(50), nullable=False)
     address = db.Column(db.String(50), nullable=False)
@@ -34,5 +35,20 @@ class Event(db.Model):
     ticket_price = db.Column(db.Integer, nullable=False)
     special_ticket = db.Column(db.String(50), nullable=False)
 
+    # Relation to comments
+    comments = db.relationship('Comment', backref='event')
+
     def __repr__(self):
         return f"Name: {self.name}"
+    
+class Comment(db.Model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(400))
+    created_at = db.Column(db.DateTime, default=datetime.now())
+    # Foreign keys
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
+
+    def __repr__(self):
+        return f"Comment: {self.text}"
