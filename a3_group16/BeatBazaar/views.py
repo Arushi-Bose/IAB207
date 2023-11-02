@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 from .models import Event
+from .models import Bookings
 from . import db
 
 main_bp = Blueprint('main', __name__)
@@ -18,4 +19,5 @@ def filter(country):
 @main_bp.route('/history')
 @login_required
 def history():
-    return render_template('booking-history.html')
+    bookings = db.session.scalars(db.select(Bookings).where(Bookings.user_id==current_user.id))
+    return render_template('booking-history.html', bookings=bookings)

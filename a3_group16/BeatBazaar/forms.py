@@ -42,7 +42,7 @@ class EventForm(FlaskForm):
     event_number_tickets = IntegerField('Number of Tickets', validators=[InputRequired()])
     event_ticket_price = IntegerField('Price ($)', validators=[InputRequired()])
     event_special_ticket = SelectField('Ticket Type', choices=[('vip','VIP'), ('general', 'General')])
-    event_status = SelectField('Status', choices=[('open', 'Open')])
+    event_status = SelectField('Status', choices=[('Open', 'Open'), ('Inactive', 'Inactive'), ('Sold Out', 'Sold Out'), ('Cancelled', 'Cancelled')])
 
     # Submit button
     submit = SubmitField("Create event")
@@ -50,3 +50,4 @@ class EventForm(FlaskForm):
 class BookingForm(FlaskForm):
     number_of_tickets = IntegerField('Number of Tickets', validators=[InputRequired()])
     submit = SubmitField("Book!")
+    update = SubmitField("Update")
