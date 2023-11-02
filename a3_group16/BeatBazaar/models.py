@@ -34,6 +34,7 @@ class Event(db.Model):
     number_tickets = db.Column(db.Integer, nullable=False)
     ticket_price = db.Column(db.Integer, nullable=False)
     special_ticket = db.Column(db.String(50), nullable=False)
+    status = db.Column(db.String(10), nullable=False)
 
     # Relation to comments
     comments = db.relationship('Comment', backref='event')
