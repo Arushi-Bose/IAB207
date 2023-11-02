@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, url_for, flash, redirect, request
 from flask_login import login_required, current_user
-from .forms import EventForm
+from .forms import EventForm, BookingForm
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import CombinedMultiDict
 import os
@@ -13,9 +13,13 @@ event_bp = Blueprint('event', __name__, url_prefix='/event')
 
 @event_bp.route('/<id>', methods=['GET', 'POST'])
 def show(id):
+    form = BookingForm()
+    if form.is_submitted():
+        return redirect(url_for('event.purchase', id=id))
+    
     events = db.session.scalar(db.select(Event).where(Event.id==id))
     comments = db.session.scalars(db.select(Comment).where(Comment.events_id==id))
-    return render_template('events/event-details.html', events=events, comments=comments)
+    return render_template('events/event-details.html', events=events, comments=comments, form=form)
 
 @event_bp.route('/create', methods=['GET', 'POST'])
 @login_required
@@ -87,7 +91,7 @@ def comment(id):
 @event_bp.route('/<id>/purchase', methods=['GET', 'POST'])
 @login_required
 def purchase(id):
-    bookingform = 0
+    bookingform = BookingForm()
     event = db.session.scalar(db.select(Event).where(Event.id==id))
     if bookingform.is_submitted():
         booking = Bookings(booking_number=randint(50000,1000000), user=current_user)
@@ -96,4 +100,4 @@ def purchase(id):
         flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(event.name, booking.booking_number))
         return redirect(url_for('main.index'))
     else:
-        return render_template('main.index', form=bookingform)
+        return redirect(url_for('main.index'))

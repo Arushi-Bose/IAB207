@@ -83,7 +83,8 @@
                         </div>
 
                         <div class="BookingForm">
-                            <form method="POST" enctype="multipart/form-data">
+                            <form method="post">
+                                {{ render_form(form)}}
                             </form>
                         </div>
 
@@ -110,7 +111,8 @@
         <div class="CommentForm">
             <div class="form-floating mb-3">
                 <form method="post" action="{{ url_for('event.comment', id=events.id) }}">
-                    <textarea class="form-control" type="text" id="commentinput" name="comment" placeholder="Enter your comment here"></textarea><br>
+                    <textarea class="form-control" type="text" id="commentinput" name="comment"
+                        placeholder="Enter your comment here"></textarea><br>
                     <input class="btn btn-primary" id="btnEventDetails" name="submit" type="submit" value="Comment">
                 </form>
             </div>
