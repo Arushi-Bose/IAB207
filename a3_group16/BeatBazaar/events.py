@@ -91,7 +91,6 @@ def comment(id):
 @event_bp.route('/<id>/purchase', methods=['GET', 'POST'])
 @login_required
 def purchase(id):
-
     if request.method == 'POST':
         number_of_tickets = request.form.get('number_of_tickets')
         booking = Bookings(booking_number=randint(50000,1000000), number_of_tickets=number_of_tickets, user_id=current_user.id, events_id=id)
@@ -99,4 +98,16 @@ def purchase(id):
         db.session.add(booking)
         db.session.commit()
         flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(event.name, booking.booking_number))
+        return redirect(url_for('main.index'))
+    
+@event_bp.route('<id>/delete', methods=['GET', 'POST'])
+@login_required
+def delete(id):
+
+    event = db.session.scalar(db.select(Event).where(Event.id==id))
+
+    if current_user.id == event.creator_id:
+        db.session.delete(event)
+        db.session.commit()
+        flash('Your event has been deleted, Have a nice day.')
         return redirect(url_for('main.index'))
