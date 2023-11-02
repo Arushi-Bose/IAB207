@@ -91,7 +91,9 @@ def comment(id):
 @event_bp.route('/<id>/purchase', methods=['GET', 'POST'])
 @login_required
 def purchase(id):
-    bookingform = BookingForm()
+    form = BookingForm()
+    if request.method == 'POST':
+        return None
     event = db.session.scalar(db.select(Event).where(Event.id==id))
     if bookingform.is_submitted():
         booking = Bookings(booking_number=randint(50000,1000000), user=current_user)
