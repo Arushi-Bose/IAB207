@@ -1,45 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <br/>  
-        <h1 style="text-align: center;"> Booking History</h1>
-        
-        <table class="table" id="bookingHistory">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col"> </th>
-                    <th scope="col">Event</th>
-                    <th scope="col">Booking ID</th>
-                    <th scope="col">Time/Date of booking</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="booking">
-                    <th scope="col" id="bookingNo"> 1</th>
-                    
-                    <td><img src="/static/img/arijit-singh.jpeg" alt="Arijit Singh" class="img-thumbnail"></td>
-                    <td>Arijit Singh (April 14, 2023)
-                        <p><a href="event-details.html" class="btn btn-light">View Details</a></p>
-                    </td>
-                    <td>2198896</td>
-                    <td>14:18 AEST on February 14, 2023</td>
-                </tr>
-                
-            </tbody>
-        </table>
+<br />
+<h1 style="text-align: center;"> Booking History</h1>
 
-        <!--Button group-->
-        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group me-2" role="group" aria-label="First group">
-              <button type="button" class="btn btn-secondary">1</button>
-              <button type="button" class="btn btn-outline-secondary">2</button>
-              <button type="button" class="btn btn-outline-secondary">3</button>
-              <button type="button" class="btn btn-outline-secondary">4</button>
-            </div>
-            <div class="input-group">
-              <div class="input-group-text" id="btnGroupAddon">🔍</div>
-              <input type="text" class="form-control" placeholder="Search a booking" aria-label="Input group example" aria-describedby="btnGroupAddon">
-            </div>
-          </div>
+<table class="table" id="bookingHistory">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"> </th>
+            <th scope="col">Event</th>
+            <th scope="col">Booking ID</th>
+            <th scope="col">Time/Date of booking</th>
+        </tr>
+    </thead>
+    {%for booking in bookings%}
+    <tbody>
+        <tr class="booking">
+            <th scope="col" id="bookingNo"> 1</th>
+
+            <td><img src="{{booking.image}}" alt="Arijit Singh" class="img-thumbnail"></td>
+            <td>Arijit Singh (April 14, 2023)
+                <p><a href="{{ url_for('event.show', id=booking.id) }}" class="btn btn-light">View Details</a></p>
+            </td>
+            <td>{{booking.booking_number}}</td>
+            <td>{{booking.created_at}}</td>
+        </tr>
+
+    </tbody>
+    {%endfor%}
+</table>
+
+<!--Button group-->
+<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group me-2" role="group" aria-label="First group">
+        <button type="button" class="btn btn-secondary">1</button>
+        <button type="button" class="btn btn-outline-secondary">2</button>
+        <button type="button" class="btn btn-outline-secondary">3</button>
+        <button type="button" class="btn btn-outline-secondary">4</button>
+    </div>
+    <div class="input-group">
+        <div class="input-group-text" id="btnGroupAddon">🔍</div>
+        <input type="text" class="form-control" placeholder="Search a booking" aria-label="Input group example"
+            aria-describedby="btnGroupAddon">
+    </div>
+</div>
 {% endblock %}
