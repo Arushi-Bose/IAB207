@@ -16,6 +16,13 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"Name: {self.name}"
     
+class Bookings(db.Model):
+    __tablename__ = 'bookings'
+    id = db.Column(db.Integer, primary_key=True)
+    booking_number = db.Column(db.Integer, unique=True, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    
 class Event(db.Model):
     __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
@@ -49,7 +56,7 @@ class Comment(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now())
     # Foreign keys
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
+    events_id = db.Column(db.Integer, db.ForeignKey('events.id'))
 
     def __repr__(self):
         return f"Comment: {self.text}"

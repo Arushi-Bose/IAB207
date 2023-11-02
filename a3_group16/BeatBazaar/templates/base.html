@@ -29,7 +29,7 @@
                                 <a class="nav-link" aria-current="page" href="{{ url_for('main.index') }}">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('event.create_event') }}">Create/Update Event</a>
+                                <a class="nav-link" href="{{ url_for('event.create_event') }}">Create Event</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('main.history') }}">Booking History</a>
@@ -72,8 +72,10 @@
                 {% if messages %}
                 {% for message in get_flashed_messages() %}
                 <div class="alert alert-warning" id="flash">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="close">x</button>
-                    {{message}}
+                    <div id="flashalert">
+                        {{message}} 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 </div>
                 {% endfor %}
                 {% endif %}
