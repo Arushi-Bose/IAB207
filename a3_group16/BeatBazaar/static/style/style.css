@@ -367,3 +367,10 @@ h2 {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+#commentinput {
+    margin: auto;
+    width: 50%;
+    border: 2px solid #000000;
+    padding: 10px;
+}

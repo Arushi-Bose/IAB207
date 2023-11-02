@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, url_for, flash, redirect, request
 from flask_login import login_required, current_user
-from .forms import EventForm, CommentForm
+from .forms import EventForm
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import CombinedMultiDict
 import os
 from . import db
-from .models import Event, Comment
+from .models import Event, Comment, Bookings
 from random import randint
 
 event_bp = Blueprint('event', __name__, url_prefix='/event')
@@ -14,9 +14,8 @@ event_bp = Blueprint('event', __name__, url_prefix='/event')
 @event_bp.route('/<id>', methods=['GET', 'POST'])
 def show(id):
     events = db.session.scalar(db.select(Event).where(Event.id==id))
-    # comment form
-    form = CommentForm()
-    return render_template('events/event-details.html', events=events, form=form)
+    comments = db.session.scalars(db.select(Comment).where(Comment.events_id==id))
+    return render_template('events/event-details.html', events=events, comments=comments)
 
 @event_bp.route('/create', methods=['GET', 'POST'])
 @login_required
@@ -72,25 +71,29 @@ def check_upload_file(form):
 @event_bp.route('/<id>/comment', methods=['GET', 'POST'])
 @login_required
 def comment(id):
-    form = CommentForm(request.form)
 
-    events = db.session.scalar(db.select(Event).where(Event.id==id))
-
-    if form.is_submitted():
-        comment = Comment(text=form.text.data, events=events, user=current_user)
+    if request.method == 'POST':
+        comment = request.form.get('comment')
+    if (request.form.get('submit')):
+        comment = Comment(text=comment, events_id=id, user_id=current_user.id)
 
         db.session.add(comment)
         db.session.commit()
 
         flash('Your comment has been added', 'success')
-        return redirect(url_for('events.comment', id=id))
-    else:
-        return render_template('events/event-details.html', form=form)
+    return redirect(url_for('event.show', id=id))
 
 
 @event_bp.route('/<id>/purchase', methods=['GET', 'POST'])
 @login_required
 def purchase(id):
-    
-    flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(id, randint(50000,1000000)))
-    return redirect(url_for('main.index'))
+    bookingform = 0
+    event = db.session.scalar(db.select(Event).where(Event.id==id))
+    if bookingform.is_submitted():
+        booking = Bookings(booking_number=randint(50000,1000000), user=current_user)
+        db.session.add(booking)
+        db.session.commit()
+        flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(event.name, booking.booking_number))
+        return redirect(url_for('main.index'))
+    else:
+        return render_template('main.index', form=bookingform)
