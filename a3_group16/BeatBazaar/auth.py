@@ -48,15 +48,16 @@ def login():
         password = login_form.password.data
         user = User.query.filter_by(name=user_name).first()
         #if there is no user with that name
-        if user is None or not check_password_hash(user.password_hash, password):
-            flash('Invalid username or password')
+        if user is None:
+            error = 'Invalid User'
+        elif  check_password_hash(user.password_hash, password):
+            error = 'Invalid Password'
             #error message does not specifcally say which is wrong
-        if error is None:
+        elif error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(user)
             return redirect(url_for('main.index'))
-        else:
-            flash(error)
+        flash(error)
     return render_template('login.html', form=login_form, heading='Login')
 
 
