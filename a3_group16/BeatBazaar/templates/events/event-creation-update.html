@@ -13,6 +13,128 @@
         <div class="form-floating mb-3">
             <form method="POST" enctype="multipart/form-data">
                 {{render_form(form)}}
+                <!--Row-->
+                <div class="row g-3 mb-3">
+                    <div class="form-floating col-12 col-sm-4">
+                        <input required type="name" class="form-control" id="floatingInput" placeholder="Riverstage">
+                        <label for="floatingInput">Event Name</label>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label" for="customFile">Upload Event Image</label>
+                        <input required type="file" accept="image/*" class="form-control" id="customFile" />
+                    </div>
+                    <div class="form-floating col-12 col-sm-4">
+                        <input required type="name" class="form-control" id="floatingInput" placeholder="Japan">
+                        <label for="floatingInput">Country of Origin</label>
+                    </div>
+                    </div><!--END Row-->
+
+                <!--Row-->
+                <div class="row g-3">
+                    <div class="col-4">
+                        <label for="date">Select Date:</label>
+                        <input required class="form-control" type="date" id="eventDatePicker" name="datepicker">
+                    </div>
+                    <div class="col-4">
+                        <label for="startTime">Start time:</label>
+                        <input required class="form-control" type="time" id="StartTime" name="StartTime">
+                    </div>
+                    <div class="col-4">
+                        <label for="endTime">End time:</label>
+                        <input required class="form-control" type="time" id="EndTime" name="EndTime">
+                    </div>
+                </div>
+            <br/>
+
+            <div class="row g-3 mb-3">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Description" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Description</label>
+                </div>
+            </div>
+            <div class="row g-3 mb-3">
+                <div class="form-floating col-12 col-sm-4">
+                    <input required type="name" class="form-control" id="floatingInput" placeholder="Southbank Parklands">
+                    <label for="floatingInput">Venue</label>
+                </div>
+                <div class="form-floating col-12 col-sm-4">
+                    <input required type="name" class="form-control" id="floatingInput" placeholder="240 Smith St">
+                    <label for="floatingInput">Address</label>
+                </div>
+                <div class="form-floating col-12 col-sm-4">
+                    <input required type="text" class="form-control" placeholder="City" aria-label="City">
+                    <label for="floatingInput">City</label>
+                </div>
+            </div>
+
+            <div class="row g-3"><!--Row-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose State...</option>
+                        <option>QLD</option>
+                        <option>NSW</option>
+                        <option>ACT</option>
+                        <option>VIC</option>
+                        <option>SA</option>
+                        <option>TAS</option>
+                        <option>WA</option>
+                        <option>NT</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <input required type="text" class="form-control" placeholder="Postcode" aria-label="Postcode">
+                </div>
+
+                <div class="col-12 col-sm-5 col-lg-3">
+                    <input type="number" min=0 max=9999 class="form-control" placeholder="Number of Tickets" aria-label="Number of Tickets">
+                </div>
+
+                <div class="col-12 col-sm-5 col-lg-2">
+                    <input type="number" min=0 max=9999 class="form-control" id="inlineFormInputGroup" placeholder="Price ($)" aria-label="Price ($)">
+                </div>
+
+                <div class="dropdown col-12 col-sm-2 col-lg-1">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        +
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#"><i>Add another ticket type</i></a></li>
+                        <li><a class="dropdown-item">200x VIP: $120</a></li>
+                        <li><a class="dropdown-item">1000x General: $90</a></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-sm-6">
+                        <label for="eventStatus">Event Status:</label>
+                        <select class="form-select" id="eventStatus" name="eventStatus">
+                            <option value="Open">Open</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="Sold Out">Sold Out</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <br>
+
+        <div class="form-group col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" id="terms" for="gridCheck" style="float:left;">
+                    I have read and accept the Terms & Conditions*
+                </label>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info">Create Event</button>
+        </form>
+
+        <button type="submit" class="btn btn-warning">Update Event</button>
+
             </form>
         </div>
     </div>
