@@ -11,10 +11,10 @@
     {{render_form(form)}}
 </div>
 
-<!-- When you have login form, then do show the user a link to register -->
+<!-- When you have login form, then show the user a link to register to the website -->
 {% if heading|lower =='login' %}
 <div class="col-md-4">
-    <p>New user? <a href="{{ url_for('register') }}">Click here to register</a>.</p>
+    <p>New user? <a href="{{ url_for('register') }}">Click Here to Register!</a>.</p>
 </div>
 {% endif %}
 
