@@ -21,7 +21,10 @@ class Bookings(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     booking_number = db.Column(db.Integer, unique=True, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
+    number_of_tickets = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    events_id = db.Column(db.Integer, db.ForeignKey('events.id'))
+    events = db.relationship("Event", lazy='joined', backref=db.backref("event"))
     
 class Event(db.Model):
     __tablename__ = 'events'
