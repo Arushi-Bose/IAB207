@@ -15,6 +15,7 @@ event_bp = Blueprint('event', __name__, url_prefix='/event')
 def show(id):
     form = BookingForm()
     if form.is_submitted():
+        print("book button pressed")
         return redirect(url_for('event.purchase', id=id))
     
     events = db.session.scalar(db.select(Event).where(Event.id==id))
@@ -87,19 +88,16 @@ def comment(id):
         flash('Your comment has been added', 'success')
     return redirect(url_for('event.show', id=id))
 
-
 @event_bp.route('/<id>/purchase', methods=['GET', 'POST'])
 @login_required
 def purchase(id):
-    form = BookingForm()
+    print("purchase hit")
     if request.method == 'POST':
         return None
     event = db.session.scalar(db.select(Event).where(Event.id==id))
-    if bookingform.is_submitted():
-        booking = Bookings(booking_number=randint(50000,1000000), user=current_user)
-        db.session.add(booking)
-        db.session.commit()
-        flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(event.name, booking.booking_number))
-        return redirect(url_for('main.index'))
-    else:
-        return redirect(url_for('main.index'))
+
+    booking = Bookings(booking_number=randint(50000,1000000), user_id=current_user.id)
+    db.session.add(booking)
+    db.session.commit()
+    flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(event.name, booking.booking_number))
+    return redirect(url_for('main.index'))
