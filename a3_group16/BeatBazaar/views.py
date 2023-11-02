@@ -18,6 +18,6 @@ def filter(country):
 @main_bp.route('/history/<id>')
 @login_required
 def history(id):
- 
-    bookings = Bookings.query.join(Event, Bookings.events_id==Event.id).filter(Bookings.user_id==id).order_by(Bookings.booking_number)
+
+    bookings = Bookings.query.join(Event, Bookings.events_id==Event.id).filter(Bookings.user_id==id)
     return render_template('booking-history.html', bookings=bookings)
