@@ -15,17 +15,17 @@
                 </tr>
             </thead>
             <tbody>
+                {% for booking in bookings %}
                 <tr class="booking">
-                    <th scope="col" id="bookingNo"> 1</th>
-                    
+                    <th scope="col" id="bookingNo">{{booking.id}}</th>
                     <td><img src="/static/img/arijit-singh.jpeg" alt="Arijit Singh" class="img-thumbnail"></td>
-                    <td>Arijit Singh (April 14, 2023)
+                    <td>Singer
                         <p><a href="event-details.html" class="btn btn-light">View Details</a></p>
                     </td>
-                    <td>2198896</td>
-                    <td>14:18 AEST on February 14, 2023</td>
+                    <td>{{booking.booking_number}}</td>
+                    <td>{{booking.created_at}}</td>
                 </tr>
-                
+                {% endfor %}
             </tbody>
         </table>
 
