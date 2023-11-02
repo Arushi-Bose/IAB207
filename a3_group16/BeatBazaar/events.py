@@ -5,11 +5,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.datastructures import CombinedMultiDict
 import os
 from . import db
-<<<<<<< HEAD
 from .models import Event, Comment
-=======
-from .models import Event, Comment, Bookings
->>>>>>> eb3a922ef39cb34ece2f76f549151f0093cbd3cd
 from random import randint
 
 event_bp = Blueprint('event', __name__, url_prefix='/event')
@@ -75,50 +71,25 @@ def check_upload_file(form):
 @event_bp.route('/<id>/comment', methods=['GET', 'POST'])
 @login_required
 def comment(id):
-<<<<<<< HEAD
     form = CommentForm(request.form)
 
     events = db.session.scalar(db.select(Event).where(Event.id==id))
 
     if form.is_submitted():
         comment = Comment(text=form.text.data, events=events, user=current_user)
-=======
-
-    if request.method == 'POST':
-        comment = request.form.get('comment')
-    if (request.form.get('submit')):
-        comment = Comment(text=comment, events_id=id, user_id=current_user.id)
->>>>>>> eb3a922ef39cb34ece2f76f549151f0093cbd3cd
 
         db.session.add(comment)
         db.session.commit()
 
         flash('Your comment has been added', 'success')
-<<<<<<< HEAD
         return redirect(url_for('events.comment', id=id))
     else:
         return render_template('events/event-details.html', form=form)
-=======
-    return redirect(url_for('event.show', id=id))
->>>>>>> eb3a922ef39cb34ece2f76f549151f0093cbd3cd
 
 
 @event_bp.route('/<id>/purchase', methods=['GET', 'POST'])
 @login_required
 def purchase(id):
-<<<<<<< HEAD
     
     flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(id, randint(50000,1000000)))
     return redirect(url_for('main.index'))
-=======
-    bookingform = 0
-    event = db.session.scalar(db.select(Event).where(Event.id==id))
-    if bookingform.is_submitted():
-        booking = Bookings(booking_number=randint(50000,1000000), user=current_user)
-        db.session.add(booking)
-        db.session.commit()
-        flash('Your tickets have been successfully purchased for event: {}. Your order number is: {}'.format(event.name, booking.booking_number))
-        return redirect(url_for('main.index'))
-    else:
-        return render_template('main.index', form=bookingform)
->>>>>>> eb3a922ef39cb34ece2f76f549151f0093cbd3cd
