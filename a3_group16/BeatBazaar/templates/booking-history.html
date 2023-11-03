@@ -14,11 +14,23 @@
             <th scope="col">Time/Date of booking</th>
         </tr>
     </thead>
-    {%for booking in bookings%}
     <tbody>
+        {%for booking in bookings%}
         <tr class="booking">
             <th scope="col" id="bookingNo">{{booking.id}}</th>
-
+           <!-- display the event image -->
+            <td>
+                <img src="{{ booking.event.image }}" alt="{{ booking.event.name }}" class="img-thumbnail">
+            </td>
+            <td>
+                <!-- display the event name and other details -->
+                {{ booking.event.name }} ({{ booking.event.date }})
+                <p>
+                    <!-- link to view event details -->
+                    <a href="{{ url_for('event.show', id=booking.event.id) }}" class="btn btn-light">View Details</a>
+                </p>
+            </td>
+            
             <td><img src="" alt="Arijit Singh" class="img-thumbnail"></td>
             <td>Arijit Singh (April 14, 2023)
                 <p><a href="{{ url_for('event.show', id=booking.id) }}" class="btn btn-light">View Details</a></p>
@@ -26,9 +38,8 @@
             <td>{{booking.booking_number}}</td>
             <td>{{booking.created_at}}</td>
         </tr>
-
+        {%endfor%}
     </tbody>
-    {%endfor%}
 </table>
 
 <!--Button group-->

@@ -1,5 +1,6 @@
 from flask_login import UserMixin
 from datetime import datetime
+from sqlalchemy.orm import relationship
 from . import db
 
 class User(db.Model, UserMixin):
@@ -49,6 +50,7 @@ class Event(db.Model):
 
     # Relation to comments
     comments = db.relationship('Comment', backref='event')
+    bookings = db.relationship("Bookings", lazy='joined', backref=db.backref("event"))
 
     def __repr__(self):
         return f"Name: {self.name}"

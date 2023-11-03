@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required
-from .models import Event, Bookings
+from .models import Event
 from . import db
 
 main_bp = Blueprint('main', __name__)
@@ -19,5 +19,6 @@ def filter(country):
 @login_required
 def history(id):
 
-    bookings = Bookings.query.join(Event, Bookings.events_id==Event.id).filter(Bookings.user_id==id)
+    event = Event.query.get(id)
+    bookings = event.bookings
     return render_template('booking-history.html', bookings=bookings)
