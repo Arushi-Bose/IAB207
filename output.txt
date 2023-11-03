@@ -1,0 +1,181 @@
+Arushi Bose (52):
+      test
+      updated with a3 starter code
+      index, event details/creation and booking pages added.
+      Change old folder name to new.
+      Make change to main.py
+      Delete unrequired extra file.
+      Make change to main.py
+      Correct name.
+      Upload css file and all images
+      Page to display 404 error
+      file name change
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Name change to css file
+      stylesheet name change
+      Link to stylesheet
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      edits to .py
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Create folder
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      edit
+      Past events edit
+      Status change
+      Change to filter control buttons
+      Comment added
+      Change to header
+      Image change
+      Changes
+      test database
+      Modified
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Modifications to python files
+      event.py bp
+      Commit cache
+      Events cache
+      Change to database
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Change to events, forms and views
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Aunthentications, events, models, views
+      Change to filter
+      Change to categorisation
+      Database
+      Change to button
+      Changed link for home page
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Cache edits
+      Revert
+      Hopefully this fixes stuff
+      id change
+      change id again
+
+Arushi-Bose (45):
+      Initial commit
+      Create main.py
+      __pycache__
+      Delete Travel Web App/__pycache__ directory
+      Create __pycache__
+      Delete IAB207 directory
+      Create something
+      Create pic
+      Create 404.html
+      Create base.html
+      Create index.html
+      Create user.html
+      Create create.html
+      Create show.html
+      Create __init__.py
+      Create auth.py
+      Create destinations.py
+      Create forms.py
+      Create models.py
+      Create views.py
+      Create requirements.txt
+      Update __init__.py
+      Update auth.py
+      Update destinations.py
+      Update forms.py
+      Update models.py
+      Update views.py
+      Update main.py
+      Update requirements.txt
+      Add files via upload
+      Merge pull request #1 from Arushi-Bose/Arushi-Bose-patch-1
+      Delete n11406488_Bose_FINAL directory
+      Merge pull request #2 from Arushi-Bose/Arushi-Bose-patch-2
+      Re-uploaded folder of files
+      Merge pull request #3 from Arushi-Bose/Arushi-Bose-patch-3
+      Add files via upload
+      Update event in index.html
+      Merge pull request #19 from Arushi-Bose/Arushi-Bose-patch-4-event-update
+      Change event status
+      Update base.html
+      Merge pull request #22 from Arushi-Bose/Arushi-Bose-patch-4
+      Update index.html
+      Merge pull request #23 from Arushi-Bose/Arushi-Bose-patch-5
+      Update index.html
+      Merge pull request #29 from Arushi-Bose/Arushi-Bose-patch-6
+
+Bunji75 (42):
+      Small-tweaks-1
+      Merge pull request #4 from Arushi-Bose/Database
+      Started implementing the database for use
+      Added the User class
+      Merge branch 'main' into Database
+      Merge pull request #5 from Arushi-Bose/Database
+      Deleted redundant files and created DB instance
+      Merge pull request #6 from Arushi-Bose/Database
+      Implemented login and register functions
+      Added minimum length for passwords
+      Added logout functionality
+      Merge pull request #7 from Arushi-Bose/Database-Dev-01
+      Made the HTML pages pull from base
+      Fixed the event pages css and images
+      Merge pull request #8 from Arushi-Bose/Database-Dev-01
+      Added EventForm for database connection
+      Almost finished the database add for events
+      Merge pull request #9 from Arushi-Bose/Database-Dev-01
+      Updated the css link to work for all pages
+      Made some small adjustments to the database storage types
+      Merge pull request #15 from Arushi-Bose/Database-Branch
+      Implemented file uploading and event create to database
+      Merge pull request #16 from Arushi-Bose/Database-Branch
+      Almsot finished commenting functionality
+      Merge branch 'Database-Branch' into Database-branch-02
+      Fixed commenting field
+      Merge pull request #20 from Arushi-Bose/Database-branch-02
+      Implemented 2 features
+      Merge branch 'Database-Branch-03'
+      Implemented commenting
+      Working on the booking system
+      Merge branch 'main' of https://github.com/Arushi-Bose/IAB207-Group-16
+      Finished the booking functionality
+      Working through booking history functionality
+      Couldn't figure out how to display the event images
+      Merge branch 'Database-Branch-03'
+      Finished the event deleting functionality
+      Project finished
+      Edits
+      Final touches for the web app
+      Merge branch 'Database-Branch-03'
+      Final update of assignment
+
+catzybluphish (18):
+      Finished off user rego/login functionality
+      Format welcome message and login/logout buttons
+      Merge pull request #11 from Arushi-Bose/catzybluphish-patch-1
+      Merge pull request #10 from Arushi-Bose/user-rego/login
+      corrected directory locations
+      fixed view event buttons
+      Merge pull request #12 from Arushi-Bose/catzybluphish-patch-2
+      Added error handling
+      Add files via upload
+      Merge pull request #14 from Arushi-Bose/catzybluphish-patch-4
+      Merge pull request #13 from Arushi-Bose/catzybluphish-patch-3
+      Added number and address to rego form
+      Made booking history generate booking IDs
+      Updated html
+      Updated html
+      Merge pull request #27 from Arushi-Bose/catzybluphish-patch-7
+      Merge pull request #26 from Arushi-Bose/catzybluphish-patch-6
+      Merge pull request #25 from Arushi-Bose/catzybluphish-patch-5
+
+najmaxxy (14):
+      minor updates
+      error message when failure to login
+      Merge pull request #18 from Arushi-Bose/authentication
+      added action attribute
+      updated error message
+      updated error message
+      edit register message
+      event creation
+      Merge pull request #24 from Arushi-Bose/Events-02
+      error handling update
+      2 updates
+      fetch event model
+      2 updates
+      Merge pull request #30 from Arushi-Bose/sql-joins
+
