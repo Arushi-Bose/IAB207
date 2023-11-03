@@ -12,7 +12,7 @@ def index():
 
 @main_bp.route('/filter/<country>')
 def filter(country):
-        events = db.session.scalars(db.select(Event).where(Event.country.like(country)))
+        events = db.session.scalars(db.select(Event).where(Event.country.like(country))).unique()
         return render_template('index.html', events=events)
 
 @main_bp.route('/history/<id>')
