@@ -30,20 +30,16 @@
         <a class="btn festivalCategory" href="{{ url_for('main.index')}}">Show All</a>
     </div>
 
-    <!--UPCOMING FESTIVALS-->
-    <h3 id="Upcoming">Upcoming Festivals</h3>
-
-
-    <!--PAST FESTIVALS WITH INACTIVE STATUS-->
-    <h3 id="Past">Past Festivals</h3>
+    <!--ALL EVENTS-->
+    <h3 id="Event">All Events</h3>
     <div class="Categorycontainer">
         <div class="row">
             {% for event in events %}
             <div class="col-lg-3 col-sm-12 col-md-4">
                 <div class="card">
                     <img class="card-img-top" src="{{event.image}}" alt="Card image">
-                    <span class="flag"><img title="Japan" id="logo" src="static/img/{{event.country}}.png" width="40"
-                            alt="Japan flag"></span>
+                    <span class="flag"><img title="Country" id="logo" src="static/img/{{event.country}}.png" width="40"
+                            alt="Country flag"></span>
                     <span class="badge badge-secondary" id="inactive"> {{event.status}} </span>
                     <div class="card-body">
                         <h5 class="card-title">{{ event.name }}</h5>
