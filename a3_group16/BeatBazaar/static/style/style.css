@@ -51,7 +51,7 @@
 #bookTicketsModal2 {
     background-color: #f7e6f7;
     width: 150px;
-    height: 80px;
+    height: 100px;
     color: #780087;
     border: white;
     margin-bottom: 10px;
@@ -373,4 +373,16 @@ h2 {
     width: 50%;
     border: 2px solid #000000;
     padding: 10px;
+}
+
+.submitbutton {
+    margin: 10px;
+}
+
+#typeNumber {
+    width:100%;
+}
+
+#bookingform {
+    width: 100%;
 }

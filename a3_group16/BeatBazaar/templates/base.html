@@ -31,9 +31,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('event.create_event') }}">Create Event</a>
                             </li>
+                            {% if current_user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('main.history') }}">Booking History</a>
+                                <a class="nav-link" href="{{ url_for('main.history', id=current_user.id) }}">Booking History</a>
                             </li>
+                            {% endif %}
                             &nbsp;
                             <li class="nav-item">
                                 <!-- <a class="nav-link" id="register-login-button"
@@ -101,10 +103,10 @@
                             <a href="{{ url_for('main.index') }}" class="text-dark">Home</a>
                         </li>
                         <li id="bottomNav">
-                            <a href="{{ url_for('event.create_event') }}" class="text-dark">Create/Update Event</a>
+                            <a href="{{ url_for('event.create_event') }}" class="text-dark">Create Event</a>
                         </li>
                         <li id="bottomNav">
-                            <a href="{{ url_for('main.history') }}" class="text-dark">Booking History</a>
+                            <a href="{{ url_for('main.history', id=current_user.id) }}" class="text-dark">Booking History</a>
                         </li>
                     </ul>
                     </class>
