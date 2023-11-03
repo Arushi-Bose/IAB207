@@ -7,7 +7,7 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def index():
-    events = db.session.scalars(db.select(Event)).all()
+    events = db.session.scalars(db.select(Event)).unique()
     return render_template('index.html', events=events)
 
 @main_bp.route('/filter/<country>')
