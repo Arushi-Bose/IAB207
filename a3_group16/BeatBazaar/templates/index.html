@@ -10,9 +10,9 @@
             artists, bringing together diverse cultures and genres to create a symphony of unforgettable moments.
         </p>
 
-        <a href="{{ url_for('event.show', id=4) }}" class="btn btn-primary btn-lg" id="btnSurprise" type="button">View Our
+        <a href="{{ url_for('event.show', id=0) }}" class="btn btn-primary btn-lg" id="btnSurprise" type="button">View Our
             Featured
-            Events</a>
+            Event</a>
     </div>
 </div>
 {% endblock %}
@@ -26,6 +26,7 @@
 
     <!-- Control buttons -->
     <div id="myBtnContainer">
+        <a class="btn festivalCategory" href="{{ url_for('main.filter', country='Pakistan')}}">Pakistan</a>
         <a class="btn festivalCategory" href="{{ url_for('main.filter', country='Japan')}}">Japan</a>
         <a class="btn festivalCategory" href="{{ url_for('main.index')}}">Show All</a>
     </div>
@@ -38,8 +39,8 @@
             <div class="col-lg-3 col-sm-12 col-md-4">
                 <div class="card">
                     <img class="card-img-top" src="{{event.image}}" alt="Card image">
-                    <span class="flag"><img title="Country" id="logo" src="static/img/{{event.country}}.png" width="40"
-                            alt="Country flag"></span>
+                    <span class="flag"><img title="Pakistan" id="logo" src="static/img/{{event.country}}.png" width="40"
+                            alt="Pakistan flag"></span>
                     <span class="badge badge-secondary" id="inactive"> {{event.status}} </span>
                     <div class="card-body">
                         <h5 class="card-title">{{ event.name }}</h5>
