@@ -47,7 +47,8 @@ def create_event():
         number_tickets = create.event_number_tickets.data,
         ticket_price = create.event_ticket_price.data,
         special_ticket = create.event_special_ticket.data,
-        status = create.event_status.data
+        status = create.event_status.data,
+        creator_id = current_user.id
         )
         # adds the inputs to the db session
         db.session.add(event)
